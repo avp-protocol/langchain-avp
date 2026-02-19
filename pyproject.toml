@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langchain-avp"
+version = "0.1.0"
+description = "LangChain integration for Agent Vault Protocol - Secure credential management"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.9"
+authors = [
+    {name = "Omar Abdelmalek", email = "abdelmalek.omar1@gmail.com"}
+]
+keywords = ["langchain", "avp", "vault", "credentials", "secrets", "ai-agents", "security"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "avp-sdk>=0.1.0",
+    "langchain-core>=0.1.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["langchain-anthropic>=0.1.0"]
+openai = ["langchain-openai>=0.1.0"]
+all = [
+    "langchain-anthropic>=0.1.0",
+    "langchain-openai>=0.1.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/avp-protocol/langchain-avp"
+Documentation = "https://avp-protocol.github.io/website"
+Repository = "https://github.com/avp-protocol/langchain-avp"
+
+[tool.setuptools.packages.find]
+where = ["src"]
